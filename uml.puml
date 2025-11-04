@@ -1,0 +1,39 @@
+@startuml
+class Sugar {
++ String getDescription()
++ double cost()
+}
+
+abstract class CoffeeDecorator {
+# Beverage beverage
++ String getDescription()
++ double cost()
+}
+
+
+class SimpleCoffee {
++ String getDescription()
++ double cost()
+}
+
+interface Beverage {
+~ String getDescription()
+~ double cost()
+}
+
+class Milk {
++ String getDescription()
++ double cost()
+}
+
+class Main {
++ {static} void main(String[])
+}
+
+
+
+CoffeeDecorator <|-- Sugar
+Beverage <|.. CoffeeDecorator
+Beverage <|.. SimpleCoffee
+CoffeeDecorator <|-- Milk
+@enduml
